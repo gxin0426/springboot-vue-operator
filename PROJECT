@@ -1,0 +1,7 @@
+domain: gxin0426
+repo: gxin0426/springboot-vue-operator
+resources:
+- group: devops
+  kind: BackAndFront
+  version: v1beta1
+version: "2"

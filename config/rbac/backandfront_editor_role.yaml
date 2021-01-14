@@ -1,0 +1,24 @@
+# permissions for end users to edit backandfronts.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: backandfront-editor-role
+rules:
+- apiGroups:
+  - devops.gxin0426
+  resources:
+  - backandfronts
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - devops.gxin0426
+  resources:
+  - backandfronts/status
+  verbs:
+  - get

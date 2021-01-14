@@ -1,0 +1,7 @@
+apiVersion: devops.gxin0426/v1beta1
+kind: BackAndFront
+metadata:
+  name: backandfront-sample
+spec:
+  # Add fields here
+  foo: bar

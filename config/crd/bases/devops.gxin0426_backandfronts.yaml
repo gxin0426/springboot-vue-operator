@@ -1,0 +1,76 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.2.5
+  creationTimestamp: null
+  name: backandfronts.devops.gxin0426
+spec:
+  group: devops.gxin0426
+  names:
+    kind: BackAndFront
+    listKind: BackAndFrontList
+    plural: backandfronts
+    singular: backandfront
+  scope: Namespaced
+  validation:
+    openAPIV3Schema:
+      description: BackAndFront is the Schema for the backandfronts API
+      properties:
+        apiVersion:
+          description: 'APIVersion defines the versioned schema of this representation
+            of an object. Servers should convert recognized schemas to the latest
+            internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+          type: string
+        kind:
+          description: 'Kind is a string value representing the REST resource this
+            object represents. Servers may infer this from the endpoint the client
+            submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+          type: string
+        metadata:
+          type: object
+        spec:
+          description: BackAndFrontSpec defines the desired state of BackAndFront
+          properties:
+            backimage:
+              description: 后端服务镜像
+              type: string
+            backname:
+              description: Foo is an example field of BackAndFront. Edit BackAndFront_types.go
+                to remove/update Foo string `json:"foo,omitempty"` back service name
+              type: string
+            frontimage:
+              description: 前端服务镜像
+              type: string
+            frontname:
+              description: front service name
+              type: string
+            port:
+              description: 对外暴露服务的端口
+              type: string
+            repicas:
+              description: pod个数
+              type: string
+          required:
+          - backimage
+          - backname
+          - frontimage
+          - frontname
+          type: object
+        status:
+          description: BackAndFrontStatus defines the observed state of BackAndFront
+          type: object
+      type: object
+  version: v1beta1
+  versions:
+  - name: v1beta1
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
